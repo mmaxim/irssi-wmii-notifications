@@ -10,3 +10,7 @@ notification originated from.
 
 * /wclear [ nick | channel ] - This command clears the notification of the current window, or from the nick/channel specified as an optional parameter.
 
+#Installation
+
+* Copy the script into ~/.irssi/scripts. To have it start on irssi startup,
+  symlink from ~/.irssi/scripts/autorun.
