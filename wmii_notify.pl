@@ -15,7 +15,9 @@ $VERSION = '1.00';
 
 sub wmii_clear_note {
     my ($type, $name) = @_;
-    system("wmiir remove /rbar/irssi_" . $type . '_' . $name . ' 2&>1 > /dev/null');
+
+    open STDERR, '>/dev/null';
+    system("wmiir remove /rbar/irssi_" . $type . '_' . $name);
 }
 
 #------------------------------------------------------------------------------
@@ -23,10 +25,10 @@ sub wmii_clear_note {
 sub wmii_create_note {
     my ($type, $name) = @_;
 
+    open STDERR, '>/dev/null';
     my $echo_cmd = 'echo \'#ff0000 #ffffff #aaaaaa irssi alert - ' . $type . ' - ' . 
                     $name . '\''; 
-    my $cmd = $echo_cmd . ' | wmiir create /rbar/irssi_' . $type . '_' .$name . 
-              ' 2&>1 > /dev/null';
+    my $cmd = $echo_cmd . ' | wmiir create /rbar/irssi_' . $type . '_' .$name;
 
     system($cmd);
 }
