@@ -26,7 +26,7 @@ sub wmii_create_note {
     my ($type, $name) = @_;
 
     open STDERR, '>/dev/null';
-    my $echo_cmd = 'echo \'#ff0000 #ffffff #aaaaaa irssi alert - ' . $type . ' - ' . 
+    my $echo_cmd = 'echo \'#ffffff #ff0000 #aaaaaa irssi alert - ' . $type . ' - ' . 
                     $name . '\''; 
     my $cmd = $echo_cmd . ' | wmiir create /rbar/irssi_' . $type . '_' .$name;
 
